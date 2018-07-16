@@ -21,7 +21,7 @@ int main(int argc, char** argv) {
     long program_len = ftell(file);
     fseek(file, 0, SEEK_SET);
 
-    char* program = calloc(0, program_len);
+    char* program = calloc(program_len, sizeof(char));
     fread(program, sizeof(char), program_len, file);
 
     fclose(file);
